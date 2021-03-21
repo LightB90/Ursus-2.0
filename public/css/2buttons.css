@@ -1,0 +1,22 @@
+.menu {
+    transform: rotate(90deg);
+    top: 70px;
+}
+.menu-open:checked ~ .menu-item:nth-child(3) {
+    transition-duration: 180ms;
+    transform: translate3d(0.20306px, -254.99992px, 0);
+}
+.menu-open:checked ~ .menu-item:nth-child(4) {
+    transition-duration: 280ms;
+    transform: translate3d(0.20306px, 254.99992px, 0);
+}
+.menu-open:checked ~ .menu-item:nth-child(5) {
+    transition-duration: 380ms;
+    transform: translate3d(-0.60919px, -254.99927px, 0);
+}
+.menu-item img {
+    transform: rotate(-90deg);
+}
+.back_img {
+    transform: rotate(-90deg);
+}

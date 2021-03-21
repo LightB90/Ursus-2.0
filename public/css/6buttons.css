@@ -1,0 +1,28 @@
+.menu-open:checked ~ .menu-item:nth-child(3) {
+    transition-duration: 180ms;
+    transform: translate3d(0.20306px, -254.99992px, 0);
+}
+.menu-open:checked ~ .menu-item:nth-child(4) {
+    transition-duration: 280ms;
+    transform: translate3d(220.87031px, -127.44138px, 0);
+}
+.menu-open:checked ~ .menu-item:nth-child(5) {
+    transition-duration: 380ms;
+    transform: translate3d(220.87031px, 127.44138px, 0);
+}
+.menu-open:checked ~ .menu-item:nth-child(6) {
+    transition-duration: 480ms;
+    transform: translate3d(0.20306px, 254.99992px, 0);
+}
+.menu-open:checked ~ .menu-item:nth-child(7) {
+    transition-duration: 580ms;
+    transform: translate3d(-220.66706px, 127.79298px, 0);
+}
+.menu-open:checked ~ .menu-item:nth-child(8) {
+    transition-duration: 680ms;
+    transform: translate3d(-221.073px, -127.08944px, 0);
+}
+.menu-open:checked ~ .menu-item:nth-child(9) {
+    transition-duration: 780ms;
+    transform: translate3d(-0.60919px, -254.99927px, 0);
+}
