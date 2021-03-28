@@ -5,3 +5,8 @@
         </div>
     </div>
 </div>
+<style>
+    #modal-lg {
+        padding-right: 0 !important;
+    }
+</style>

@@ -3,7 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< Updated upstream
     <meta name="Description" content="Standarde Ursus Breweries">
+=======
+    <link rel="manifest" href="{{asset('manifest.webmanifest')}}"></link>
+    
+>>>>>>> Stashed changes
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
@@ -20,10 +25,32 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}" >
 
     @stack('js-css')
+    <link rel="apple-touch-icon" href="images/icon-512.png">
+    
+   
 </head>
 <body>
     @include('resources.modal')
     @include('resources.modal_lg')
     @yield('content')
+    
+    <script> 
+    window.addEventListener('load', e => {
+
+  registerSW();
+});
+    async function registerSW() {
+  if ('serviceWorker' in navigator) {
+    try {
+      await navigator.serviceWorker.register('{{asset('sw.js')}}');
+    } catch (e) {
+      alert('ServiceWorker registration failed. Sorry about that.');
+    }
+  } else {
+    document.querySelector('.alert').removeAttribute('hidden');
+  }
+}
+</script>
+
 </body>
 </html>

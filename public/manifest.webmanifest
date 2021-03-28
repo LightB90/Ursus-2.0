@@ -1,0 +1,25 @@
+{
+  "dir": "ltr",
+  "lang": "ro",
+  "name": "Standarde UB",
+  "short_name": "standarde",
+  "scope": "/home",
+  "display": "fullscreen",
+  "start_url": "https://standarde.glomestudio.com/home",
+  "background_color": "#004391",
+  "theme_color": "transparent",
+  "description": "Standarde de Executie UB",
+  "orientation": "any",
+  "categories": ["marketing tool"],
+  "related_applications": [],
+  "icons":  [
+		{
+			"src": "/images/icon-512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	],
+  "url": "https://standarde.glomestudio.com/home",
+  "generated": true,
+  "screenshots": []
+}
