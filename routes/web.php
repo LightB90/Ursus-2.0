@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(['reset'=>false,'verify'=>false]);
 
 Route::get('/home', [App\Http\Controllers\PagesController::class, 'index'])->name('home')->middleware('web');
 
