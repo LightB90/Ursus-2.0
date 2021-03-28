@@ -1,16 +1,16 @@
 .menu-open:checked ~ .menu-item:nth-child(3) {
     transition-duration: 180ms;
-    transform: translate3d(0.20306px, -254.99992px, 0);
+    transform: translate3d(0.07963px, -99.99997px, 0);
 }
 .menu-open:checked ~ .menu-item:nth-child(4) {
     transition-duration: 280ms;
-    transform: translate3d(220.87031px, 127.44138px, 0);
+    transform: translate3d(86.61581px, 49.97701px, 0);
 }
 .menu-open:checked ~ .menu-item:nth-child(5) {
     transition-duration: 380ms;
-    transform: translate3d(-220.66706px, 127.79298px, 0);
+    transform: translate3d(-86.5361px, 50.1149px, 0);
 }
 .menu-open:checked ~ .menu-item:nth-child(6) {
     transition-duration: 480ms;
-    transform: translate3d(-0.60919px, -254.99927px, 0);
+    transform: translate3d(-0.2389px, -99.99971px, 0);
 }

@@ -1,10 +1,11 @@
 body {
     background: #004391;
-    font-family: 'Nunito', sans-serif;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    margin: 0 0 30px 0;
+    padding: 0 0 30px 0;
+    line-height: 1;
+    font-size: 16px;
+
 }
 body:before {
     content: ' ';
@@ -18,28 +19,29 @@ body:before {
     background-image: url('../images/pattern.svg');
     background-size: auto auto;
 }
-.holder {
-    position: relative;
-    top: 150px;
-}
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+.navigation {
     width: 100%;
-    border-top: 1px solid #fff;
-    padding: 5px 20px;
-    background: #004391;
+    height: 58px;
+    background: linear-gradient( to left, rgb(220 162 30) 0%, rgb(199 138 24) 12%, rgb(103 74 8) 100% ) left bottom #004391 no-repeat;
+    background-size: 100% 3px;
+    z-index: 20;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
-.last_update {
-    text-align: right;
-    color: #fff;
-    font-weight: 500;
-    font-family: 'Arial', sans-serif;
-    line-height: 1;
+.page_top_menu {
+    height: 55px;
+    padding: 5px 0 0;
+    width: 100%;
+}
+.page-container {
+    margin-top: 57px;
+}
+.back_btn {
+    cursor: pointer;
     padding-top: 5px;
 }
-.on_off img {
-    width: 20px;
-    margin-bottom: 2px;
+.back_btn img {
+    width: 35px;
 }
+

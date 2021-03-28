@@ -10,7 +10,15 @@ class Subpage extends Model
     use HasFactory;
 
     protected $table = 'subpages';
-    protected $casts = ['images'=>'array','buttons'=>'array'];
-    protected $fillable = ['page_data'];
+
+    public function parent()
+    {
+        return $this->belongsTo(Page::class, 'page_id','id');
+    }
+
+    public function elements()
+    {
+        return $this->hasMany(Element::class, 'page_id','id');
+    }
 
 }

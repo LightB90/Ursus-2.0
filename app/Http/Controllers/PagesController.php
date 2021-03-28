@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Images;
 use App\Models\Page;
 use App\Models\Subpage;
+use App\Models\Texts;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class PagesController extends Controller
 {
@@ -17,47 +20,64 @@ class PagesController extends Controller
     public function pagina(Request $request)
     {
         if(substr($request->page,0,1) == 's') {
-            $pagina = substr($request->page,1,2);
-            $page = Subpage::find($pagina);
-            return view('templates.'.$page->template,compact('page'));
+            $subpage_id = str_replace('s','',$request->page);
+            $subpage = Subpage::with('elements','parent')->find($subpage_id);
+            return view('components.subpagina',compact('subpage'));
         } else {
             $page = Page::with('childrens','parents','subpages')->find($request->page);
             if($page->childrens->count() > 0) {
-                return view('pagina',compact('page'));
+                return view('components.pagina',compact('page'));
             } else {
-                $page = Subpage::where('page_id',$request->page)->first();
-                return view('templates.'.$page->template,compact('page'));
+                $subpage = Subpage::with('elements','parent')->where('page_id',$request->page)->first();
+                return view('components.subpagina',compact('subpage'));
             }
         }
     }
 
-    public function navigation(Request $request)
-    {
-        $page = Page::with('childrens','parents','subpages')->find($request->page);
-        return view('partials.navigation',compact('page'));
-    }
-
     public function text_edit(Request $request)
     {
-        $data = strval($request->data);
-        Subpage::find($request->page)->update(['page_data'=>$data]);
+        Texts::find($request->id)->update(['data'=>$request->data]);
         return 'Textul a fost updatat cu succes!';
     }
 
     public function edit_file($id)
     {
-        return view('comps.modal_tt',compact('id'));
+        $image = Images::find($id);
+        return view('modal.upload_file',compact('image'));
     }
 
     public function file_up(Request $request)
     {
+        $storage = Storage::disk('public');
+        $image = Images::find($request->id);
+        $redirect_id = 's'.$image->parent->page_id;
+
+        $storage->delete($image->path);
 
         $file = $request->file('filename');
         $name = $request->file('filename')->getClientOriginalName();
 
-        $storage = Storage::disk('public');
-        $storage->put('/poze/'.$name, file_get_contents($file));
+        Image::make($request->file('filename'))->resize(NULL, 378, function ($x) {
+            $x->aspectratio();
+        })->save('storage/'.$request->file('filename')->getClientOriginalName());
+        $thumb_path = 'thumb/'.$name;
+        $storage->move($name,$thumb_path);
 
-        return back();
+        $path = 'poze/'.$name;
+        $storage->put($path, file_get_contents($file));
+
+        $image->update([
+            'name' => $name,
+            'path' => $path,
+            'thumb_path' => $thumb_path
+        ]);
+
+        return redirect()->route('home')->with( ['redirect_id' => $redirect_id] )->with('message','Poza a fost urcata cu succes!!');
+    }
+
+    public function image_full($id)
+    {
+        $image = Images::find($id);
+        return view('modal.view_file',compact('image'));
     }
 }

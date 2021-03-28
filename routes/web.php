@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes(['register'=>false]);
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\PagesController::class, 'index'])->name('home')->middleware('web');
 
@@ -27,5 +27,8 @@ Route::get('/navigation', [App\Http\Controllers\PagesController::class, 'navigat
 
 Route::post('/text_edit', [App\Http\Controllers\PagesController::class, 'text_edit'])->name('text_edit')->middleware('web');
 
-Route::get('/{id}/edit_file', [App\Http\Controllers\PagesController::class, 'edit_file'])->name('edit_file')->middleware('web');
+Route::get('/edit_file/{id}', [App\Http\Controllers\PagesController::class, 'edit_file'])->name('edit_file')->middleware('web');
+
 Route::post('/file_up', [App\Http\Controllers\PagesController::class, 'file_up'])->name('file_up')->middleware('web');
+
+Route::get('/image_full/{id}', [App\Http\Controllers\PagesController::class, 'image_full'])->name('image_full')->middleware('web');

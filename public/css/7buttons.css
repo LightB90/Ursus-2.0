@@ -1,32 +1,32 @@
 .menu-open:checked ~ .menu-item:nth-child(3) {
     transition-duration: 180ms;
-    transform: translate3d(0.20306px, -254.99992px, 0);
+    transform: translate3d(0.07963px, -99.99997px, 0);
 }
 .menu-open:checked ~ .menu-item:nth-child(4) {
     transition-duration: 280ms;
-    transform: translate3d(199.42128px, -158.92185px, 0);
+    transform: translate3d(78.20442px, -62.32229px, 0);
 }
 .menu-open:checked ~ .menu-item:nth-child(5) {
     transition-duration: 380ms;
-    transform: translate3d(248.61307px, 56.71456px, 0);
+    transform: translate3d(97.49532px, 22.241px, 0);
 }
 .menu-open:checked ~ .menu-item:nth-child(6) {
     transition-duration: 480ms;
-    transform: translate3d(110.77102px, 229.68409px, 0);
+    transform: translate3d(43.43961px, 90.07219px, 0);
 }
 .menu-open:checked ~ .menu-item:nth-child(7) {
     transition-duration: 580ms;
-    transform: translate3d(-110.40507px, 229.86022px, 0);
+    transform: translate3d(-43.29611px, 90.14126px, 0);
 }
 .menu-open:checked ~ .menu-item:nth-child(8) {
     transition-duration: 680ms;
-    transform: translate3d(-248.52243px, 57.11044px, 0);
+    transform: translate3d(-97.45978px, 22.39625px, 0);
 }
 .menu-open:checked ~ .menu-item:nth-child(9) {
     transition-duration: 780ms;
-    transform: translate3d(-199.67413px, -158.60404px, 0);
+    transform: translate3d(-78.30358px, -62.19766px, 0);
 }
 .menu-open:checked ~ .menu-item:nth-child(10) {
     transition-duration: 880ms;
-    transform: translate3d(-0.60919px, -254.99927px, 0);
+    transform: translate3d(-0.2389px, -99.99971px, 0);
 }

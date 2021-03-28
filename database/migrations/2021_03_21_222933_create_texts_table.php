@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSubpagesTable extends Migration
+class CreateTextsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateSubpagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('subpages', function (Blueprint $table) {
+        Schema::create('texts', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->bigInteger('page_id')->unsigned();
-            $table->foreign('page_id')->references('id')->on('pages');
-            $table->string('template')->nullable();
+            $table->longText('data');
+            $table->bigInteger('element_id')->unsigned();
+            $table->foreign('element_id')->references('id')->on('elements');
             $table->tinyInteger('status');
             $table->timestamps();
         });
@@ -31,6 +30,6 @@ class CreateSubpagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subpages');
+        Schema::dropIfExists('texts');
     }
 }
