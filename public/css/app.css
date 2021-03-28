@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Arial Narrow';
+    url('../fonts/ARIALN.woff') format('woff'), /* Pretty Modern Browsers */
+    url('../fonts/ARIALNB.woff') format('woff'), /* Pretty Modern Browsers */
+}
 body {
     background: #004391;
     font-family: 'Arial', sans-serif;
@@ -21,7 +26,7 @@ body:before {
 }
 .navigation {
     width: 100%;
-    height: 58px;
+    height: 50px;
     background: linear-gradient( to left, rgb(220 162 30) 0%, rgb(199 138 24) 12%, rgb(103 74 8) 100% ) left bottom #004391 no-repeat;
     background-size: 100% 3px;
     z-index: 20;
@@ -35,13 +40,13 @@ body:before {
     width: 100%;
 }
 .page-container {
-    margin-top: 57px;
+    margin-top: 40px;
 }
 .back_btn {
     cursor: pointer;
     padding-top: 5px;
 }
 .back_btn img {
-    width: 35px;
+    width: 25px;
 }
 

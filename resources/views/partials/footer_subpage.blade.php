@@ -49,6 +49,7 @@
             padding-right: 5px;
         }
         .top_bottom_menu_button {
+            font-family: 'Arial Narrow', Arial, sans-serif;
             color: #004391;
             text-transform: uppercase;
             cursor: pointer;
