@@ -61,6 +61,8 @@ class PagesController extends Controller
             $x->aspectratio();
         })->save('storage/'.$request->file('filename')->getClientOriginalName());
         $thumb_path = 'thumb/'.$name;
+
+        if ($storage->exists($thumb_path)) $storage->delete($thumb_path);
         $storage->move($name,$thumb_path);
 
         $path = 'poze/'.$name;

@@ -47,14 +47,14 @@
                             @endguest
                         </div>
                     @else
-                        <div class="vitrina_holder">
-                            <div class="img-overlay-wrap_{{$element->type}}" data-toggle="modal" data-target="#modal-lg" data-href={{route('image_full',$element->image->id)}}>
-                                <img alt="" src="{{asset('storage/'.$element->image->thumb_path)}}">
-                            </div>
-                            @auth
-                                <a href="{{route('edit_file',$element->image->id)}}" type="button" class="btn btn-primary edit_button" data-toggle="modal" data-target="#modal-s">Edit</a>
-                            @endauth
-                        </div>
+{{--                        <div class="vitrina_holder">--}}
+{{--                            <div class="img-overlay-wrap_{{$element->type}}" data-toggle="modal" data-target="#modal-lg" data-href={{route('image_full',$element->image->id)}}>--}}
+{{--                                <img alt="" src="{{asset('storage/'.$element->image->thumb_path)}}">--}}
+{{--                            </div>--}}
+{{--                            @auth--}}
+{{--                                <a href="{{route('edit_file',$element->image->id)}}" type="button" class="btn btn-primary edit_button" data-toggle="modal" data-target="#modal-s">Edit</a>--}}
+{{--                            @endauth--}}
+{{--                        </div>--}}
                     @endif
                 </div>
             @endforeach
