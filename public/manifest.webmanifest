@@ -7,7 +7,7 @@
   "display": "fullscreen",
   "start_url": "https://standarde.glomestudio.com/home",
   "background_color": "#004391",
-  "theme_color": "transparent",
+  "theme_color": "#317EFB",
   "description": "Standarde de Executie UB",
   "orientation": "any",
   "categories": ["marketing tool"],

@@ -3,16 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<<<<<<< Updated upstream
     <meta name="Description" content="Standarde Ursus Breweries">
-<<<<<<< HEAD
-=======
-    <link rel="manifest" href="{{asset('manifest.webmanifest')}}"></link>
-    
->>>>>>> Stashed changes
-=======
+    <link rel="manifest" href="{{asset('manifest.webmanifest')}}">
     <meta name="theme-color" content="#317EFB"/>
->>>>>>> 2dfedc217f4f98e88dd7c8c8089a08335d43f7e6
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
@@ -30,15 +23,15 @@
 
     @stack('js-css')
     <link rel="apple-touch-icon" href="images/icon-512.png">
-    
-   
+
+
 </head>
 <body>
     @include('resources.modal')
     @include('resources.modal_lg')
     @yield('content')
-    
-    <script> 
+
+    <script>
     window.addEventListener('load', e => {
 
   registerSW();
