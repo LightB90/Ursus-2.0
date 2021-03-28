@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <<<<<<< Updated upstream
     <meta name="Description" content="Standarde Ursus Breweries">
+<<<<<<< HEAD
 =======
     <link rel="manifest" href="{{asset('manifest.webmanifest')}}"></link>
     
 >>>>>>> Stashed changes
+=======
+    <meta name="theme-color" content="#317EFB"/>
+>>>>>>> 2dfedc217f4f98e88dd7c8c8089a08335d43f7e6
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
