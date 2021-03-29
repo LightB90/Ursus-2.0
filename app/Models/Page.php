@@ -23,7 +23,7 @@ class Page extends Model
 
     public function subpages()
     {
-        return $this->hasMany(Subpage::class, 'page_id','id');
+        return $this->hasMany(Subpage::class, 'page_id','id')->where('status',1);
     }
 
 }

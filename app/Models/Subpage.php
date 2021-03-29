@@ -18,7 +18,7 @@ class Subpage extends Model
 
     public function elements()
     {
-        return $this->hasMany(Element::class, 'page_id','id');
+        return $this->hasMany(Element::class, 'page_id','id')->where('status',1);
     }
 
 }

@@ -13,12 +13,12 @@ class Element extends Model
 
     public function image()
     {
-        return $this->hasOne(Images::class, 'element_id','id');
+        return $this->hasOne(Images::class, 'element_id','id')->where('status',1);
     }
 
     public function text()
     {
-        return $this->hasOne(Texts::class, 'element_id','id');
+        return $this->hasOne(Texts::class, 'element_id','id')->where('status',1);
     }
 
     public function parent()
