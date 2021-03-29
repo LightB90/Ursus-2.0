@@ -1,17 +1,17 @@
 const staticCacheName = "Standarde UB";
 const cacheName = 'standarde-v1';
 
-var filesToCache = [
+const filesToCache = [
     '/',
-    'css/',
-    'js/',
-    'pagina/',
+    '/css/',
+    '/js/',
+    '/pagina/',
 ];
 
 self.addEventListener("install", function (e) {
     e.waitUntil(
         caches.open(staticCacheName).then(function (cache) {
-            return cache.addAll(["/"]);
+            return cache.addAll(filesToCache);
         })
     );
 });
