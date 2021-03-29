@@ -4,7 +4,7 @@
             <div class="menu-holder">
                 <nav class="menu">
                     <input type="checkbox" class="menu-open" name="menu-open" id="menu-open" value="true">
-                    <label class="menu-open-button" @if($page->id != '1') data-page=" {{$page->parents->id}}" @endif for="menu-open">
+                    <label class="menu-open-button" @if($page->id != '1') data-page="{{$page->parents->id}}" @endif for="menu-open">
                         <img alt="MT" width="60px" height="60px" class="back_img" src="@if($page->id == '1') {{asset('images/home_asahi.svg')}} @else {{asset('images/back.svg')}}@endif">
                     </label>
                     @foreach($page->childrens as $child)
