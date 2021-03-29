@@ -1,7 +1,7 @@
 const staticCacheName = "Standarde UB";
 const cacheName = 'standarde-v1';
 
-const filesToCache = [
+var filesToCache = [
     '/',
     '/css/',
     '/js/',
@@ -18,7 +18,6 @@ self.addEventListener("install", function (e) {
 
 self.addEventListener('fetch', function(e) {
     const req = e.request;
-    console.log(req);
 
     if (/.*(json)$/.test(req.url)) {
         e.respondWith(networkFirst(req));
