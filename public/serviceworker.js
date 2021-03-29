@@ -15,15 +15,14 @@ var filesToCache = [
     '/css/home.css',
     '/fonts/ARIALN.woff',
     '/fonts/ARIALNB.woff',
-    '/images/*',
     '/js/app.js',
     '/js/jquery-3.3.1.js',
     '/js/bootstrap.min.js',
     '/js/popper.min.js',
     '/js/summernote-bs4.min.js',
     '/js/toastr.min.js',
-    '/images/icons/icon-192x192.png',
-    '/images/icons/icon-512x512.png',
+    '/images/icon-192x192.png',
+    '/images/icon-512x512.png',
 ];
 
 // Cache on install
