@@ -24,31 +24,26 @@
     @stack('js-css')
     <link rel="apple-touch-icon" href="images/icon-512.png">
 
-
+    <script type="text/javascript">
+        // Initialize the service worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/serviceworker.js', {
+                scope: '.'
+            }).then(function (registration) {
+                // Registration was successful
+                console.log('Laravel PWA: ServiceWorker registration successful with scope: ', registration.scope);
+            }, function (err) {
+                // registration failed :(
+                console.log('Laravel PWA: ServiceWorker registration failed: ', err);
+            });
+        }
+    </script>
 </head>
 <body>
     @include('resources.modal')
     @include('resources.modal_lg')
     @yield('content')
 
-@guest
-<script>
-    window.addEventListener('load', e => {
-        registerSW();
-    });
 
-    async function registerSW() {
-        if ('serviceWorker' in navigator) {
-            try {
-                await navigator.serviceWorker.register('{{asset('sw.js')}}');
-            } catch (e) {
-                alert('ServiceWorker registration failed. Sorry about that.');
-            }
-        } else {
-            document.querySelector('.alert').removeAttribute('hidden');
-        }
-    }
-    </script>
-@endguest
 </body>
 </html>
