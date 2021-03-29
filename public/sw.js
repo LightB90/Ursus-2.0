@@ -1,5 +1,5 @@
 const staticCacheName = "Standarde UB";
-const cacheName = 'std';
+const cacheName = 'standarde-v1';
 
 self.addEventListener("install", function (e) {
     e.waitUntil(
