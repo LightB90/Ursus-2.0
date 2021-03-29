@@ -4,9 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="Description" content="Standarde Ursus Breweries">
+    @guest
     <link rel="manifest" href="{{asset('manifest.webmanifest')}}">
     <meta name="theme-color" content="#004391">
-    <!-- CSRF Token -->
+    @endguest
+
+<!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -28,23 +31,24 @@
     @include('resources.modal_lg')
     @yield('content')
 
-    <script>
+@guest
+<script>
     window.addEventListener('load', e => {
+        registerSW();
+    });
 
-  registerSW();
-});
     async function registerSW() {
-  if ('serviceWorker' in navigator) {
-    try {
-      await navigator.serviceWorker.register('{{asset('sw.js')}}');
-    } catch (e) {
-      alert('ServiceWorker registration failed. Sorry about that.');
+        if ('serviceWorker' in navigator) {
+            try {
+                await navigator.serviceWorker.register('{{asset('sw.js')}}');
+            } catch (e) {
+                alert('ServiceWorker registration failed. Sorry about that.');
+            }
+        } else {
+            document.querySelector('.alert').removeAttribute('hidden');
+        }
     }
-  } else {
-    document.querySelector('.alert').removeAttribute('hidden');
-  }
-}
-</script>
-
+    </script>
+@endguest
 </body>
 </html>
