@@ -17,8 +17,8 @@
     @include('assets.scripts')
 
     <!-- Styles -->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/toastr.min.css')}}">
+{{--    <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">--}}
+{{--    <link rel="stylesheet" type="text/css" href="{{asset('css/toastr.min.css')}}">--}}
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}" >
 
     @stack('js-css')
