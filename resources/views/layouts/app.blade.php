@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="Description" content="Standarde Ursus Breweries">
     <link rel="manifest" href="{{asset('manifest.webmanifest')}}">
-    <meta name="theme-color" content="#317EFB"/>
+    <meta name="theme-color" content="transparent"/>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
