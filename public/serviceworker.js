@@ -8,7 +8,7 @@ var filesToCache = [
     '/css/6buttons.css',
     '/css/7buttons.css',
     '/css/8buttons.css',
-    '/css/8buttons.css',
+    '/css/9buttons.css',
     '/css/bootstrap.min.css',
     '/css/summernote-bs4.min.css',
     '/css/toastr.min.css',
