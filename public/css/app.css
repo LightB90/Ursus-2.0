@@ -40,7 +40,7 @@ body:before {
     width: 100%;
 }
 .page-container {
-    margin-top: 40px;
+    margin-top: 5%;
 }
 .back_btn {
     cursor: pointer;

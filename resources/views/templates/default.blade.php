@@ -18,7 +18,7 @@
 <style>
     @media screen and (max-width: 600px) {
         .page-container {
-            margin-top: 250px;
+            margin-top: 45%;
         }
     }
 </style>
