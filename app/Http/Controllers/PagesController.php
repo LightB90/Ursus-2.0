@@ -55,11 +55,11 @@ class PagesController extends Controller
         $storage->delete($image->path);
 
         $file = $request->file('filename');
-        $name = time().$request->file('filename')->getClientOriginalName();
+        $name = time().'-'.$request->file('filename')->getClientOriginalName();
 
         Image::make($request->file('filename'))->resize(NULL, 378, function ($x) {
             $x->aspectratio();
-        })->save('storage/'.$request->file('filename')->getClientOriginalName());
+        })->save('storage/'.time().'-'.$request->file('filename')->getClientOriginalName());
         $thumb_path = 'thumb/'.$name;
 
         if ($storage->exists($thumb_path)) $storage->delete($thumb_path);
