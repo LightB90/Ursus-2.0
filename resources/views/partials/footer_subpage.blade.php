@@ -177,7 +177,7 @@
     }
     .img-overlay-wrap_m:after { background-image: url('../../images/rame/rama_opm.svg');}
     .img-overlay-wrap_s800:after { background-image: url('../../images/rame/rama_s800.svg');}
-    .img-overlay-wrap_s900:after { background-image: url('../../images/rame/rama_opm.svg');}
+    .img-overlay-wrap_s900:after { background-image: url('../../images/rame/rama_opl.svg');}
     .img-overlay-wrap_s1300:after { background-image: url('../../images/rame/rama_s1300.svg');}
     .img-overlay-wrap_l:after { background-image: url('../../images/rame/rama_opl.svg'); }
     .img-overlay-wrap_xl:after { background-image: url('../../images/rame/rama_opxl.svg'); }
