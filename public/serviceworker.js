@@ -21,8 +21,8 @@ var filesToCache = [
     '/js/popper.min.js',
     '/js/summernote-bs4.min.js',
     '/js/toastr.min.js',
-    '/images/icon-192x192.png',
-    '/images/icon-512x512.png',
+    '/images/icon-192.png',
+    '/images/icon-512.png',
 ];
 
 // Cache on install
