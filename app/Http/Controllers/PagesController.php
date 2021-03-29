@@ -55,7 +55,7 @@ class PagesController extends Controller
         $storage->delete($image->path);
 
         $file = $request->file('filename');
-        $name = $request->file('filename')->getClientOriginalName();
+        $name = time().$request->file('filename')->getClientOriginalName();
 
         Image::make($request->file('filename'))->resize(NULL, 378, function ($x) {
             $x->aspectratio();
