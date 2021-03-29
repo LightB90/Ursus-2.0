@@ -16,9 +16,14 @@
     </div>
 </div>
 <style>
+    @media screen and (max-width:900px) {
+        .page-container {
+            margin-top: 0;
+        }
+    }
     @media screen and (max-width: 600px) {
         .page-container {
-            margin-top: 45%;
+            margin-top: 40%;
         }
     }
 </style>
