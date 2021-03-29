@@ -14,7 +14,7 @@
                 </div>
                 <div class="col-3">
                     <div class="logo">
-                        <img alt="" src="{{asset('images/logo_white.svg')}}">
+                        <img alt="logo" width="55px" height="22px" src="{{asset('images/logo_white.svg')}}">
                     </div>
                 </div>
             </div>
