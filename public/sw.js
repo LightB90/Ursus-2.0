@@ -3,9 +3,7 @@ const cacheName = "standarde-v1";
 
 var filesToCache = [
     "/",
-    "/css",
-    "/js",
-    "/pagina",
+    "/pagina?page=12",
 ];
 
 self.addEventListener("install", function (e) {
