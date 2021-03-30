@@ -88,7 +88,10 @@ class PagesController extends Controller
         $arr = [];
         array_push($arr,"/");
         array_push($arr,"/home");
-
+        array_push($arr,"/css/font/summernote.ttf");
+        array_push($arr,"/css/font/summernote.woff");
+        array_push($arr,"/css/font/summernote.woff2");
+        array_push($arr,"/css/font/summernote.eot");
 
         $pages = Page::pluck('id')->toArray();
         foreach ($pages as $page) {
@@ -126,12 +129,6 @@ class PagesController extends Controller
         $css = array_diff(scandir($css_path), array('.', '..', '.DS_Store', 'icons', 'rame'));
         foreach($css as $val) {
             array_push($arr, '/css/'.$val);
-        }
-
-        $fonts_path = public_path('/css/font');
-        $fonts = array_diff(scandir($fonts_path), array('.', '..', '.DS_Store', 'icons', 'rame'));
-        foreach($fonts as $val) {
-            array_push($arr, '/css/font/'.$val);
         }
 
         $fonts_path = public_path('/fonts');
