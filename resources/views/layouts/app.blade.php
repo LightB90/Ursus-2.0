@@ -24,6 +24,7 @@
     @stack('js-css')
     <link rel="apple-touch-icon" href="images/icon-512.png">
 
+    @guest
     <script type="text/javascript">
         // Initialize the service worker
         if ('serviceWorker' in navigator) {
@@ -38,12 +39,11 @@
             });
         }
     </script>
+    @endguest
 </head>
 <body>
     @include('resources.modal')
     @include('resources.modal_lg')
     @yield('content')
-
-
 </body>
 </html>
