@@ -131,7 +131,7 @@ class PagesController extends Controller
         $fonts_path = public_path('/css/font');
         $fonts = array_diff(scandir($fonts_path), array('.', '..', '.DS_Store', 'icons', 'rame'));
         foreach($fonts as $val) {
-            array_push($arr, '/css/font'.$val);
+            array_push($arr, '/css/font/'.$val);
         }
 
         $fonts_path = public_path('/fonts');
