@@ -149,11 +149,10 @@ class PagesController extends Controller
             array_push($arr, '/storage/thumb/'.$val);
         }
 
-        $images = Images::pluck('id')->where('status',1)->toArray();
-        foreach($images as $image) {
-            array_push($arr,'/image_full/'.$image);
+        $images = Images::where('status',1)->pluck('id')->toArray();
+        foreach($images as $val) {
+            array_push($arr,'/image_full/'.$val);
         }
-
 
         $newJsonString = stripslashes(json_encode($arr, JSON_PRETTY_PRINT));
         file_put_contents(public_path('new_data.json'),$newJsonString);
