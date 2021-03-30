@@ -86,6 +86,7 @@ class PagesController extends Controller
     public function generate_json()
     {
         $arr = [];
+        array_push($arr,"/");
 
 
         $pages = Page::pluck('id')->toArray();
