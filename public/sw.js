@@ -3,7 +3,7 @@ const staticCacheName = "Standarde UB";
 self.addEventListener("install", function (e) {
     e.waitUntil(
         caches.open(staticCacheName).then(function (cache) {
-            return fetch('data.json').then(function(response) {
+            return fetch('new_data.json').then(function(response) {
                 return response.json();
             }).then(function(files) {
                 console.log('[install] Adding files from JSON file: ', files);
