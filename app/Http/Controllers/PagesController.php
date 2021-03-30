@@ -126,7 +126,7 @@ class PagesController extends Controller
         }
 
         $css_path = public_path('/css');
-        $css = array_diff(scandir($css_path), array('.', '..', '.DS_Store', 'icons', 'rame'));
+        $css = array_diff(scandir($css_path), array('.', '..', '.DS_Store', 'icons', 'rame','font'));
         foreach($css as $val) {
             array_push($arr, '/css/'.$val);
         }
