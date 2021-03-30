@@ -149,7 +149,7 @@ class PagesController extends Controller
             array_push($arr, '/storage/thumb/'.$val);
         }
 
-        $images = Images::pluck('id')->toArray();
+        $images = Images::pluck('id')->where('status',1)->toArray();
         foreach($images as $image) {
             array_push($arr,'/image_full/'.$image);
         }
