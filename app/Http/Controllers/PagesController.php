@@ -87,6 +87,7 @@ class PagesController extends Controller
     {
         $arr = [];
         array_push($arr,"/");
+        array_push($arr,"/home");
 
 
         $pages = Page::pluck('id')->toArray();
