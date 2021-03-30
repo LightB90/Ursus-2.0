@@ -154,8 +154,8 @@ class PagesController extends Controller
             array_push($arr,'/image_full/'.$val);
         }
 
-        $newJsonString = stripslashes(json_encode($arr, JSON_PRETTY_PRINT));
-        file_put_contents(public_path('new_data.json'),$newJsonString);
+        $newJsonString = json_encode($arr, JSON_PRETTY_PRINT);
+        file_put_contents(public_path('new_data.json'),stripslashes($newJsonString));
     }
 
 }
