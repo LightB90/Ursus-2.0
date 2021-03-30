@@ -23,8 +23,6 @@ Route::get('/home', [App\Http\Controllers\PagesController::class, 'index'])->nam
 
 Route::get('/pagina', [App\Http\Controllers\PagesController::class, 'pagina'])->name('pagina')->middleware('web');
 
-Route::get('/navigation', [App\Http\Controllers\PagesController::class, 'navigation'])->name('navigation')->middleware('web');
-
 Route::post('/text_edit', [App\Http\Controllers\PagesController::class, 'text_edit'])->name('text_edit')->middleware('web');
 
 Route::get('/edit_file/{id}', [App\Http\Controllers\PagesController::class, 'edit_file'])->name('edit_file')->middleware('web');

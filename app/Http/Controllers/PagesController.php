@@ -108,19 +108,19 @@ class PagesController extends Controller
         }
 
         $images_path = public_path('/images');
-        $images = array_diff(scandir($images_path), array('.', '..', '.DS_Store', 'icons', 'rame'));
+        $images = array_diff(scandir($images_path), array('.', '..', '.DS_Store', 'icons', 'rame','font'));
         foreach($images as $img) {
             array_push($arr, '/images/'.$img);
         }
 
         $images_path = public_path('/images/icons');
-        $images = array_diff(scandir($images_path), array('.', '..', '.DS_Store', 'icons', 'rame'));
+        $images = array_diff(scandir($images_path), array('.', '..', '.DS_Store', 'icons', 'rame','font'));
         foreach($images as $img) {
             array_push($arr, '/images/icons/'.$img);
         }
 
         $images_path = public_path('/images/rame');
-        $images = array_diff(scandir($images_path), array('.', '..', '.DS_Store', 'icons', 'rame'));
+        $images = array_diff(scandir($images_path), array('.', '..', '.DS_Store', 'icons', 'rame','font'));
         foreach($images as $img) {
             array_push($arr, '/images/rame/'.$img);
         }
@@ -132,10 +132,23 @@ class PagesController extends Controller
         }
 
         $fonts_path = public_path('/fonts');
-        $fonts = array_diff(scandir($fonts_path), array('.', '..', '.DS_Store', 'icons', 'rame'));
+        $fonts = array_diff(scandir($fonts_path), array('.', '..', '.DS_Store', 'icons', 'rame','font'));
         foreach($fonts as $val) {
             array_push($arr, '/fonts/'.$val);
         }
+
+        $stored_images_path = public_path('/storage/poze');
+        $stored_images = array_diff(scandir($stored_images_path), array('.', '..', '.DS_Store', 'icons', 'rame','font'));
+        foreach($stored_images as $val) {
+            array_push($arr, '/storage/poze/'.$val);
+        }
+
+        $stored_thumbs_path = public_path('/storage/thumb');
+        $stored_thumb = array_diff(scandir($stored_thumbs_path), array('.', '..', '.DS_Store', 'icons', 'rame','font'));
+        foreach($stored_thumb as $val) {
+            array_push($arr, '/storage/thumb/'.$val);
+        }
+
 
         $newJsonString = json_encode($arr, JSON_PRETTY_PRINT);
         file_put_contents(public_path('new_data.json'), stripslashes($newJsonString));
