@@ -93,12 +93,12 @@ class PagesController extends Controller
         array_push($arr,"/css/font/summernote.woff2");
         array_push($arr,"/css/font/summernote.eot");
 
-        $pages = Page::pluck('id')->toArray();
+        $pages = Page::where('status',1)->pluck('id')->toArray();
         foreach ($pages as $page) {
             array_push($arr, "/pagina?page=" . $page);
         }
 
-        $subpages = Subpage::get()->groupBy('page_id')->toArray();
+        $subpages = Subpage::where('status',1)->get()->groupBy('page_id')->toArray();
         foreach ($subpages as $val) {
             if (count($val) > 1) {
                 foreach ($val as $subpage) {
