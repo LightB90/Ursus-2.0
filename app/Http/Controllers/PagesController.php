@@ -96,7 +96,6 @@ class PagesController extends Controller
         }
 
         $subpages = Subpage::get()->groupBy('page_id')->toArray();
-
         foreach ($subpages as $val) {
             if (count($val) > 1) {
                 foreach ($val as $subpage) {
@@ -121,6 +120,24 @@ class PagesController extends Controller
         $images = array_diff(scandir($images_path), array('.', '..', '.DS_Store', 'icons', 'rame'));
         foreach($images as $img) {
             array_push($arr, '/images/rame/'.$img);
+        }
+
+        $css_path = public_path('/css');
+        $css = array_diff(scandir($css_path), array('.', '..', '.DS_Store', 'icons', 'rame'));
+        foreach($css as $val) {
+            array_push($arr, '/css/'.$val);
+        }
+
+        $fonts_path = public_path('/css/font');
+        $fonts = array_diff(scandir($fonts_path), array('.', '..', '.DS_Store', 'icons', 'rame'));
+        foreach($fonts as $val) {
+            array_push($arr, '/css/font'.$val);
+        }
+
+        $fonts_path = public_path('/fonts');
+        $fonts = array_diff(scandir($fonts_path), array('.', '..', '.DS_Store', 'icons', 'rame'));
+        foreach($fonts as $val) {
+            array_push($arr, '/fonts/'.$val);
         }
 
         $newJsonString = json_encode($arr, JSON_PRETTY_PRINT);
