@@ -7,7 +7,7 @@ self.addEventListener("install", function (e) {
                 return response.json();
             }).then(function(files) {
                 console.log('[install] Adding files from JSON file: ', files);
-                return cache.addAll(files["pages"]);
+                return cache.addAll(files["pages"],files["pages"]);
             });
         }).then(function() {
             console.log(

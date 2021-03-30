@@ -85,17 +85,12 @@ class PagesController extends Controller
 
     public function generate_json()
     {
-        $arr = [
-            "pages" => [],
-            "subpages" => [],
-            "images" => [],
-            "icons" => [],
-            "rame" => [],
-        ];
+        $arr = [];
+
 
         $pages = Page::pluck('id')->toArray();
         foreach ($pages as $page) {
-            array_push($arr['pages'], "/pagina?page=" . $page);
+            array_push($arr, "/pagina?page=" . $page);
         }
 
         $subpages = Subpage::get()->groupBy('page_id')->toArray();
@@ -103,7 +98,7 @@ class PagesController extends Controller
         foreach ($subpages as $val) {
             if (count($val) > 1) {
                 foreach ($val as $subpage) {
-                    array_push($arr['subpages'], "/pagina?page=s" . $subpage["id"]);
+                    array_push($arr, "/pagina?page=s" . $subpage["id"]);
                 }
             }
         }
@@ -111,19 +106,19 @@ class PagesController extends Controller
         $images_path = public_path('/images');
         $images = array_diff(scandir($images_path), array('.', '..', '.DS_Store', 'icons', 'rame'));
         foreach($images as $img) {
-            array_push($arr['images'], '/images/'.$img);
+            array_push($arr, '/images/'.$img);
         }
 
         $images_path = public_path('/images/icons');
         $images = array_diff(scandir($images_path), array('.', '..', '.DS_Store', 'icons', 'rame'));
         foreach($images as $img) {
-            array_push($arr['icons'], '/images/icons/'.$img);
+            array_push($arr, '/images/icons/'.$img);
         }
 
         $images_path = public_path('/images/rame');
         $images = array_diff(scandir($images_path), array('.', '..', '.DS_Store', 'icons', 'rame'));
         foreach($images as $img) {
-            array_push($arr['rame'], '/images/rame/'.$img);
+            array_push($arr, '/images/rame/'.$img);
         }
 
         $newJsonString = json_encode($arr, JSON_PRETTY_PRINT);
