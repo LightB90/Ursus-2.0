@@ -151,7 +151,7 @@ class PagesController extends Controller
 
         $images = Images::pluck('id')->toArray();
         foreach($images as $image) {
-            array_push($arr,'/image_full/'.$image);
+            array_push($arr,$image);
         }
 
 
