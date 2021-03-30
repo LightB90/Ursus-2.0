@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="Description" content="Standarde Ursus Breweries">
     @guest
-    <link rel="manifest" href="{{asset('manifest.webmanifest')}}">
+     <link rel="manifest" href="{{asset('manifest.json')}}"> 
     <meta name="theme-color" content="#004391">
     @endguest
 
@@ -38,12 +38,17 @@
                 console.log('Laravel PWA: ServiceWorker registration failed: ', err);
             });
         }
-    </script>
+    </script> 
+    
+
     @endguest
-</head>
+
+
 <body>
     @include('resources.modal')
     @include('resources.modal_lg')
     @yield('content')
+
+
 </body>
 </html>

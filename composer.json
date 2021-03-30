@@ -9,15 +9,16 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "codexshaper/laravel-pwa": "^1.1",
         "fideloper/proxy": "^4.4",
         "filp/whoops": "^2.10",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "intervention/image": "dev-master",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.2",
         "scssphp/scssphp": "^1.4.1",
-        "intervention/image": "dev-master",
         "silviolleite/laravelpwa": "~2.0.3"
     },
     "require-dev": {

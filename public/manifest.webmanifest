@@ -3,7 +3,7 @@
   "lang": "ro",
   "name": "Standarde Ursus Breweries",
   "short_name": "StandardeUB",
-  "scope": "/home",
+  "scope": "/home/",
   "display": "fullscreen",
   "start_url": "https://standarde.glomestudio.com/home",
   "background_color": "#004391",

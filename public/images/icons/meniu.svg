@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="221.496" height="221.496" viewBox="0 0 221.496 221.496">
+  <g id="standard" transform="translate(-320.73 -0.063)">
+    <g id="MT_circle" data-name="MT circle" transform="translate(320.73 0.063)" fill="#fff" stroke="#bc970c" stroke-width="2">
+      <circle cx="110.748" cy="110.748" r="110.748" stroke="none"/>
+      <circle cx="110.748" cy="110.748" r="109.748" fill="none"/>
+    </g>
+    <path id="Path_961" data-name="Path 961" d="M18.816,0V-16.8H14.832L10.416-9.7,6-16.8H2.016V0H5.64V-10.9l4.68,7.1h.1l4.728-7.176V0ZM34.2,0V-3.288H25.08V-6.816H33V-10.1H25.08v-3.408h9V-16.8H21.408V0ZM50.976,0V-16.8H47.328V-6.456L39.456-16.8H36.048V0H39.7V-10.68L47.832,0Zm6.456,0V-16.8h-3.7V0ZM74.568-7.32V-16.8h-3.7v9.624c0,2.664-1.368,4.032-3.624,4.032S63.624-4.56,63.624-7.3v-9.5h-3.7v9.6c0,4.944,2.76,7.464,7.272,7.464S74.568-2.232,74.568-7.32Z" transform="translate(393.522 119.938)" fill="#bc970c"/>
+  </g>
+</svg>

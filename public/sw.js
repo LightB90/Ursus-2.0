@@ -1,6 +1,4 @@
 const staticCacheName = "Standarde UB";
-const cacheName = "standarde-v1";
-
 var filesToCache = ["/"];
 
 self.addEventListener("install", function (e) {
@@ -33,7 +31,7 @@ self.addEventListener('fetch', function(e) {
 });
 
 async function networkFirst(req) {
-    const cache = await caches.open(cacheName);
+    const cache = await caches.open(staticCacheName);
     try {
         const fresh = await fetch(req);
         cache.put(req, fresh.clone());
@@ -44,7 +42,7 @@ async function networkFirst(req) {
 }
 
 async function cacheFirst(req) {
-    const cache = await caches.open(cacheName);
+    const cache = await caches.open(staticCacheName);
     const cachedResponse = await cache.match(req);
     return cachedResponse || networkFirst(req);
 }

@@ -32,3 +32,5 @@ Route::get('/edit_file/{id}', [App\Http\Controllers\PagesController::class, 'edi
 Route::post('/file_up', [App\Http\Controllers\PagesController::class, 'file_up'])->name('file_up')->middleware('web');
 
 Route::get('/image_full/{id}', [App\Http\Controllers\PagesController::class, 'image_full'])->name('image_full')->middleware('web');
+
+
