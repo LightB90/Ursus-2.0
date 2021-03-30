@@ -1,5 +1,4 @@
 const staticCacheName = "Standarde UB";
-var filesToCache = ["/"];
 
 self.addEventListener("install", function (e) {
     e.waitUntil(

@@ -33,4 +33,6 @@ Route::post('/file_up', [App\Http\Controllers\PagesController::class, 'file_up']
 
 Route::get('/image_full/{id}', [App\Http\Controllers\PagesController::class, 'image_full'])->name('image_full')->middleware('web');
 
+Route::get('/generate_json', [App\Http\Controllers\PagesController::class, 'generate_json'])->name('generate_json')->middleware('web');
+
 
