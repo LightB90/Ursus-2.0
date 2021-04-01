@@ -93,7 +93,6 @@ class PagesController extends Controller
         $arr = [];
         array_push($arr,"/");
         array_push($arr,"/offline.html");
-        array_push($arr,"/new_data.json");
         array_push($arr,"/css/font/summernote.woff2");
 
         $pages = Page::pluck('id')->toArray();
