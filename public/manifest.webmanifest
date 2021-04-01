@@ -3,9 +3,9 @@
   "lang": "ro",
   "name": "Standarde Ursus Breweries",
   "short_name": "StandardeUB",
-  "scope": "https://standarde.glomestudio.com",
+  "scope": "http://localhost:8000",
   "display": "fullscreen",
-  "start_url": "https://standarde.glomestudio.com/home",
+  "start_url": "http://localhost:8000",
   "background_color": "#004391",
   "theme_color": "#004391",
   "description": "Standarde de Executie Ursus Breweries",
@@ -26,7 +26,7 @@
             "purpose": "any maskable"
         }
 	],
-  "url": "https://standarde.glomestudio.com",
+  "url": "http://localhost:8000",
   "generated": true,
   "screenshots": []
 }

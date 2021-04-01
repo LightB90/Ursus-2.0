@@ -1,4 +1,3 @@
-<!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -28,7 +27,7 @@
     <script type="text/javascript">
         // Initialize the service worker
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js', {
+            navigator.serviceWorker.register('/service-worker.js', {
                 scope: '.'
             }).then(function (registration) {
                 // Registration was successful

@@ -17,6 +17,11 @@ class PagesController extends Controller
         return view('home');
     }
 
+    public function offline()
+    {
+        return view('offline');
+    }
+
     public function pagina(Request $request)
     {
         if (substr($request->page, 0, 1) == 's') {
@@ -87,11 +92,9 @@ class PagesController extends Controller
     {
         $arr = [];
         array_push($arr,"/");
-        array_push($arr,"/home");
-        array_push($arr,"/css/font/summernote.ttf");
-        array_push($arr,"/css/font/summernote.woff");
+        array_push($arr,"/offline.html");
+        array_push($arr,"/new_data.json");
         array_push($arr,"/css/font/summernote.woff2");
-        array_push($arr,"/css/font/summernote.eot");
 
         $pages = Page::pluck('id')->toArray();
         foreach ($pages as $page) {
@@ -137,17 +140,17 @@ class PagesController extends Controller
             array_push($arr, '/fonts/'.$val);
         }
 
-        $stored_images_path = public_path('/storage/poze');
-        $stored_images = array_diff(scandir($stored_images_path), array('.', '..', '.DS_Store', 'icons', 'rame','font'));
-        foreach($stored_images as $val) {
-            array_push($arr, '/storage/poze/'.$val);
-        }
-
-        $stored_thumbs_path = public_path('/storage/thumb');
-        $stored_thumb = array_diff(scandir($stored_thumbs_path), array('.', '..', '.DS_Store', 'icons', 'rame','font'));
-        foreach($stored_thumb as $val) {
-            array_push($arr, '/storage/thumb/'.$val);
-        }
+//        $stored_images_path = public_path('/storage/poze');
+//        $stored_images = array_diff(scandir($stored_images_path), array('.', '..', '.DS_Store', 'icons', 'rame','font'));
+//        foreach($stored_images as $val) {
+//            array_push($arr, '/storage/poze/'.$val);
+//        }
+//
+//        $stored_thumbs_path = public_path('/storage/thumb');
+//        $stored_thumb = array_diff(scandir($stored_thumbs_path), array('.', '..', '.DS_Store', 'icons', 'rame','font'));
+//        foreach($stored_thumb as $val) {
+//            array_push($arr, '/storage/thumb/'.$val);
+//        }
 
         $newJsonString = json_encode($arr, JSON_PRETTY_PRINT);
         file_put_contents(public_path('new_data.json'),stripslashes($newJsonString));

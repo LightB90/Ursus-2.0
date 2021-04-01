@@ -13,13 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/admin', function () {
     return view('welcome');
-});
+})->name('admin');
 
 Auth::routes(['reset'=>false,'verify'=>false]);
 
-Route::get('/home', [App\Http\Controllers\PagesController::class, 'index'])->name('home')->middleware('web');
+Route::get('/', [App\Http\Controllers\PagesController::class, 'index'])->name('home')->middleware('web');
+
+Route::get('/offline', [App\Http\Controllers\PagesController::class, 'offline'])->name('offline')->middleware('web');
 
 Route::get('/pagina', [App\Http\Controllers\PagesController::class, 'pagina'])->name('pagina')->middleware('web');
 
