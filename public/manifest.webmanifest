@@ -9,7 +9,7 @@
   "background_color": "#004391",
   "theme_color": "#004391",
   "description": "Standarde de Executie Ursus Breweries",
-  "orientation": "any",
+  "orientation": "portrait-primary",
   "categories": ["marketing tool"],
   "related_applications": [],
   "icons":  [

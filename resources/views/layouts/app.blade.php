@@ -13,12 +13,19 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    @include('assets.scripts')
+    <script src="{{asset('js/jquery-3.3.1.js')}}"></script>
+    <script src="{{asset('js/popper.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/toastr.min.js')}}"></script>
+    <script src="{{asset('/js/summernote-bs4.min.js',)}}"></script>
 
-    <!-- Styles -->
-{{--    <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">--}}
-{{--    <link rel="stylesheet" type="text/css" href="{{asset('css/toastr.min.css')}}">--}}
+{{--    @include('assets.scripts')--}}
+
+    <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/toastr.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}" >
+    <link rel="stylesheet" type="text/css" href="{{ asset("/css/summernote-bs4.min.css") }}" >
+
 
     @stack('js-css')
     <link rel="apple-touch-icon" href="images/icon-512.png">
