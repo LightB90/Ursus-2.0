@@ -22,18 +22,18 @@ class PagesController extends Controller
         return view('offline');
     }
 
-    public function pagina(Request $request)
+    public function pagina($id)
     {
-        if (substr($request->page, 0, 1) == 's') {
-            $subpage_id = str_replace('s', '', $request->page);
+        if (substr($id, 0, 1) == 's') {
+            $subpage_id = str_replace('s', '', $id);
             $subpage = Subpage::with('elements', 'parent')->find($subpage_id);
             return view('components.subpagina', compact('subpage'));
         } else {
-            $page = Page::with('childrens', 'parents', 'subpages')->find($request->page);
+            $page = Page::with('childrens', 'parents', 'subpages')->find($id);
             if ($page->childrens->count() > 0) {
                 return view('components.pagina', compact('page'));
             } else {
-                $subpage = Subpage::with('elements', 'parent')->where('page_id', $request->page)->first();
+                $subpage = Subpage::with('elements', 'parent')->where('page_id', $id)->first();
                 return view('components.subpagina', compact('subpage'));
             }
         }
@@ -93,18 +93,21 @@ class PagesController extends Controller
         $arr = [];
         array_push($arr,"/");
         array_push($arr,"/offline");
+        array_push($arr,"https://code.jquery.com/jquery-3.2.1.slim.min.js");
+        array_push($arr,"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css");
+        array_push($arr,"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js");
         array_push($arr,"/css/font/summernote.woff2");
 
         $pages = Page::pluck('id')->toArray();
         foreach ($pages as $page) {
-            array_push($arr, "/pagina?page=" . $page);
+            array_push($arr, "/pagina/".$page);
         }
 
         $subpages = Subpage::get()->groupBy('page_id')->toArray();
         foreach ($subpages as $val) {
             if (count($val) > 1) {
                 foreach ($val as $subpage) {
-                    array_push($arr, "/pagina?page=s" . $subpage["id"]);
+                    array_push($arr, "/pagina/s".$subpage["id"]);
                 }
             }
         }

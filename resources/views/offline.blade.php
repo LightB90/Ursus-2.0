@@ -5,7 +5,7 @@
 @section('content')
     <div class="main-content">
         <div class="container">
-            <h1 style="text-align: center; margin-top: 50px;">Esti offline mai baga o fisa!</h1>
+            <h1 style="text-align: center; margin-top: 50px;">Esti offline!</h1>
         </div>
     </div>
 @endsection

@@ -23,7 +23,7 @@ Route::get('/', [App\Http\Controllers\PagesController::class, 'index'])->name('h
 
 Route::get('/offline', [App\Http\Controllers\PagesController::class, 'offline'])->name('offline')->middleware('web');
 
-Route::get('/pagina', [App\Http\Controllers\PagesController::class, 'pagina'])->name('pagina')->middleware('web');
+Route::get('/pagina/{id}', [App\Http\Controllers\PagesController::class, 'pagina'])->name('pagina')->middleware('web');
 
 Route::post('/text_edit', [App\Http\Controllers\PagesController::class, 'text_edit'])->name('text_edit')->middleware('web');
 

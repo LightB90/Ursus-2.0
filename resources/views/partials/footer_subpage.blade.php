@@ -2,32 +2,47 @@
     $(document).ready(function(){
 
         $('[data-toggle="modal"]').click(function(){
-            let url = ($(this).attr('href') !== undefined)? $(this).attr('href') : $(this).data('href');
+            var url = ($(this).attr('href') !== undefined)? $(this).attr('href') : $(this).data('href');
             $('.modal-content').html('<img src="{{asset('images/icons/loading.gif')}}" style="width: 50px; height: 50px; display: block; margin: 0 auto;">');
 
-            $.ajax({
-                type : 'GET',
-                url : url,
-                success: function(result) {
-                    $('.modal-content').html(result);
-                }
+            fetch(url, {
+                method: "get",
+            }).then(function (response) {
+                // The API call was successful!
+                return response.text();
+            }).then(function (html) {
+                // Convert the HTML string into a document object
+                var parser = new DOMParser();
+                var doc = parser.parseFromString(html, 'text/html');
+                $('.modal-content').html(doc.querySelector('body').innerHTML);
+            }).catch(function (err) {
+                console.warn('Something went wrong.', err);
             });
         });
 
-        let butoane = ['.back_btn','.top_bottom_menu_button'];
+        var container = $('.main-content');
+        var butoane = ['.back_btn','.top_bottom_menu_button'];
         butoane.forEach(function(value){
             $(value).click(function(){
-                let page = $(this).data('page');
-                $.ajax({
-                    type: "GET",
-                    data: {page: page},
-                    url: "/pagina",
-                    success: function(result){
-                        $('.main-content').html(result);
-                    }
+                var page = $(this).data('page');
+
+                fetch('/pagina/'+page, {
+                    method: "get",
+                }).then(function (response) {
+                    // The API call was successful!
+                    return response.text();
+                }).then(function (html) {
+                    // Convert the HTML string into a document object
+                    var parser = new DOMParser();
+                    var doc = parser.parseFromString(html, 'text/html');
+                    container.html(doc.querySelector('body').innerHTML);
+                }).catch(function (err) {
+                    console.warn('Something went wrong.', err);
                 });
             });
         });
+
+
 
     });
 </script>
